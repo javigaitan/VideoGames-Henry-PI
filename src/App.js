@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+const btnPulsado = () => {
+  alert(`Hola`)
+}
+
+const App = () => {
+
+  const array = [1,2,3,4,5,6]
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {array.map((n,key)=>{
+        return <p key ={key}>{n}</p>
+          
+      })}
     </div>
-  );
+  )
+
+
+
+
+
+  /*const title = <h1>Estoy creanto un h1 asignando con una constante</h1>;
+  return <div>{title}</div>*/
+  
+   /*Ejemplo de JSX 
+  <button onClick={btnPulsado}>pulsame</button>*/
+
+
 }
 
 export default App;
+ 
