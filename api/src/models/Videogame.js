@@ -15,12 +15,12 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    descripcion:{
+    description:{
       type: DataTypes.TEXT,
       allowNull: false,
 
     },
-    plataformas:{
+    platforms:{
       type: DataTypes.ARRAY(DataTypes.TEXT),
       allowNull: false,
 

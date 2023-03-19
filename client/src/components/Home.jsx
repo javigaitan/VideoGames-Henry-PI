@@ -1,19 +1,28 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getVideogames } from "../actions";
+import { getGenres, getVideogames } from "../actions";
 import {Link} from "react-router-dom";
 import Card from "./Card";
 
 
+
 export default function Home(){
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const allVideoGames = useSelector ((state) => state.videogames)
+    //const AllGenres = useSelector ((state) => state.genres)
+
+
+
 
     useEffect (() =>{
-        dispatch(getVideogames());
-    },[])
+        dispatch(getVideogames())
+        dispatch(getGenres())
+    },[dispatch])
+
+
+
 
     function handleClick(e){
         e.preventDefault();
@@ -25,6 +34,9 @@ export default function Home(){
 
 
     return(
+
+        
+        
         <div>
             <Link to= '/videogames'> Crear VideoJuego</Link>
             <h1> El mejor sitio para buscar tu juego</h1>
@@ -60,5 +72,6 @@ export default function Home(){
             </div>
         </div>
 
+        
     )
 }
