@@ -53,7 +53,7 @@ export default function Home(){
         <div>
             <Link className="btn" to= '/'> Back</Link>
             <Link className="btn" to= '/videogames'> Crear VideoJuego</Link>
-            <h1> El mejor sitio para buscar tu juego</h1>
+            <h1> Todos los juegos en un solo sitio</h1>
 
             
 
@@ -61,7 +61,9 @@ export default function Home(){
                 Resetear todo los  juegos nuevamente
             </botton>
 
-            <div >
+            <div  >
+
+            <div className="filtros"  >
                 <select className="btn"  >
                     <option value='asc'>Ascendente</option>
                     <option value='desc'>Descendente</option>
@@ -87,6 +89,8 @@ export default function Home(){
                     ))}
                     
                 </select>
+
+                </div>
 
                 <Paginado
 

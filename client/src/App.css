@@ -194,7 +194,9 @@ article:has(:hover, :focus) {
   
 }
 
-
+.filtros{
+  padding: 30px;
+}
 
 
 
