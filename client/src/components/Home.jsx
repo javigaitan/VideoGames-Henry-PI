@@ -16,6 +16,14 @@ export default function Home(){
     //Estados locales para el paginado
     const [currentPage, setCurentPage] = useState(1)
     const [videogamesPerPage, setVideogamesPerPage] = useState(15)  //Defino cuantos debe traerme por pag
+    const indexOfLastVideogames = currentPage * videogamesPerPage // 14
+    const indexOfFirstVideogames = indexOfLastVideogames - videogamesPerPage
+    const currentVideogames = allVideoGames.slice(indexOfFirstVideogames, indexOfLastVideogames)
+
+
+    const paginado = (pagNumber) => {
+        setCurentPage(pagNumber)
+    }
 
 
 
