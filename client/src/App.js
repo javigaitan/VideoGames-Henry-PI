@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import LandingPage from './components/LandingPage'
 import Home from './components/Home';
+import CreateForm from './components/CreateForm'
+import Detail from './components/Detail.jsx'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
 
       <Route exact path='/' element={<LandingPage/>} />
       <Route path='/home' element={<Home/>} />
+      <Route path='/home/:id' element={<Detail/>} />
+      <Route path='/videogame' element={<CreateForm/>} />
 
       </Routes>
 

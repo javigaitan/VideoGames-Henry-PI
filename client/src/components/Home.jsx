@@ -51,37 +51,40 @@ export default function Home(){
     return(
 
         <div>
-            <Link className="btn" to= '/'> Back</Link>
-            <Link className="btn" to= '/videogames'> Crear VideoJuego</Link>
-            <h1> Todos los juegos en un solo sitio</h1>
+            <Link className="btn btn-back" to= '/'> Back</Link>
+            
+            <div className="title-home">
+            <h1  > Todos los juegos en un solo sitio</h1>
+            </div>
 
             
 
-            <botton onClick= {e =>{handleClick(e)}}>
+            <botton className="btn btn-up" onClick= {e =>{handleClick(e)}}>
                 Resetear todo los  juegos nuevamente
             </botton>
+            <Link className="btn btn-up" to= '/videogames'> Crear VideoJuego</Link>
 
             <div  >
 
             <div className="filtros"  >
-                <select className="btn"  >
+                <select className="btn btn-filter"  >
                     <option value='asc'>Ascendente</option>
                     <option value='desc'>Descendente</option>
                 </select>
 
-                <select className="btn" >
+                <select className="btn btn-filter" >
                     <option value='asc'>A-Z</option>
                     <option value='desc'>Z-A</option>
                 </select>
 
-                <select className="btn" >
+                <select className="btn btn-filter" >
                     <option value='all'>Todos</option>
                     <option value='created'>Creados</option>
                     <option value='api'>Existentes</option>
                 </select>
 
 
-                <select className="btn" >
+                <select className="btn btn-filter" >
                     <option value='all'>Todos</option>
                     {AllGenres?.map((e) =>(
                         <option key={e} value={e}> {e} </option>
