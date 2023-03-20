@@ -11,7 +11,13 @@ export default function Home(){
 
     const dispatch = useDispatch();
     const allVideoGames = useSelector ((state) => state.videogames)
-    //const AllGenres = useSelector ((state) => state.genres)
+    const AllGenres = useSelector ((state) => state.genres)
+
+    //Estados locales para el paginado
+    const [currentPage, setCurentPage] = useState(1)
+    const [videogamesPerPage, setVideogamesPerPage] = useState(15)  //Defino cuantos debe traerme por pag
+
+
 
 
 
@@ -35,11 +41,12 @@ export default function Home(){
 
     return(
 
-        
-        
         <div>
+            <Link to= '/'> Back</Link>
             <Link to= '/videogames'> Crear VideoJuego</Link>
             <h1> El mejor sitio para buscar tu juego</h1>
+
+            
 
             <botton onClick= {e =>{handleClick(e)}}>
                 Resetear todo los  juegos nuevamente
@@ -62,6 +69,16 @@ export default function Home(){
                     <option value='api'>Existentes</option>
                 </select>
 
+
+                <select >
+                    <option value='all'>Todos</option>
+                    {AllGenres?.map((e) =>(
+                        <option key={e} value={e}> {e} </option>
+
+                    ))}
+                    
+                </select>
+
                 {allVideoGames &&
                allVideoGames.map((el) => {
             return (
@@ -71,7 +88,6 @@ export default function Home(){
 
             </div>
         </div>
-
         
     )
 }

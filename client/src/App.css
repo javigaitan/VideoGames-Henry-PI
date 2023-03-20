@@ -1,31 +1,71 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+  color: var(--color-white);
 }
+
+p{
+  color: var(--color-white);
+}
+
+:root {
+
+  --color-bg: #002B5B;
+  --color-bg-variant: #2B4865;
+  --color-primary: #256D85;
+  --color-primary-variant: rgba(77, 181, 255, 0.4);
+  --color-white: #E7F6F2;
+  --color-light: rgba(255, 255, 255, 0.6);
+
+  --transition: all 400ms ease;
+
+  --container-width-lg: 75%;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
+}
+
+body{
+  background-image: url(../src/assets/inicio.jpg);
+  justify-content: center;
+  
+}
+
+
+
+.App {
+  text-align: center;
+  
+  
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+
+
+
+
+/*  Responsive */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
