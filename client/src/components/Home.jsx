@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getGenres, getVideogames } from "../actions";
 import {Link} from "react-router-dom";
 import Card from "./Card";
+import Paginado from "./Paginado";
 
 
 
@@ -50,8 +51,8 @@ export default function Home(){
     return(
 
         <div>
-            <Link to= '/'> Back</Link>
-            <Link to= '/videogames'> Crear VideoJuego</Link>
+            <Link className="btn" to= '/'> Back</Link>
+            <Link className="btn" to= '/videogames'> Crear VideoJuego</Link>
             <h1> El mejor sitio para buscar tu juego</h1>
 
             
@@ -60,25 +61,25 @@ export default function Home(){
                 Resetear todo los  juegos nuevamente
             </botton>
 
-            <div>
-                <select >
+            <div >
+                <select className="btn"  >
                     <option value='asc'>Ascendente</option>
                     <option value='desc'>Descendente</option>
                 </select>
 
-                <select >
+                <select className="btn" >
                     <option value='asc'>A-Z</option>
                     <option value='desc'>Z-A</option>
                 </select>
 
-                <select >
+                <select className="btn" >
                     <option value='all'>Todos</option>
                     <option value='created'>Creados</option>
                     <option value='api'>Existentes</option>
                 </select>
 
 
-                <select >
+                <select className="btn" >
                     <option value='all'>Todos</option>
                     {AllGenres?.map((e) =>(
                         <option key={e} value={e}> {e} </option>
@@ -87,12 +88,31 @@ export default function Home(){
                     
                 </select>
 
-                {allVideoGames &&
-               allVideoGames.map((el) => {
+                <Paginado
+
+                videogamesPerPage = {videogamesPerPage}
+                allVideoGames = {allVideoGames.length}
+                paginado = {paginado}
+                />
+
+                <div className="cardbox">
+
+                {currentVideogames && currentVideogames.map((c) =>{
+                 
             return (
-              <Card name={el.name} image={el.img} genres={el.genres} />
+                <div >
+                    
+                    
+                    <Card id={c.id} background_image={c.background_image} name={c.name} genres={c.genres}  key={c.id} />
+
+                
+
+                </div>
               );
             })} 
+            </div>
+
+            
 
             </div>
         </div>

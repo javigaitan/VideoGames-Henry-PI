@@ -6,18 +6,21 @@ export default function Paginado ({videogamesPerPage, allVideogames, paginado}){
     for (let i =0; i<Math.ceil(allVideogames/videogamesPerPage); i++){
         pagNumber.push(i)
     }
+
+    return(
+        <nav>
+            <ul>
+                {pagNumber &&
+                pagNumber.map(number =>{
+    
+                    <li>
+                    <a onClick={() => paginado(number)}>{number}</a>
+                    </li>
+                })}
+            </ul>
+        </nav>
+    )
+
+
 }
 
-return(
-    <nav>
-        <ul>
-            {pagNumber &&
-            pagNumber.map(number =>{
-
-                <li>
-                <a onClick={() => paginado(number)}>{number}</a>
-                </li>
-            })}
-        </ul>
-    </nav>
-)
