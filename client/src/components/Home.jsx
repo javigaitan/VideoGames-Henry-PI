@@ -5,15 +5,20 @@ import { getGenres, getVideogames, filterCreated, orderByName , orderByRating, f
 import {Link} from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
+import Loader from "./Loader";
+
 
 
 
 export default function Home(){
 
     const dispatch = useDispatch();
-    const allVideoGames = useSelector ((state) => state.videogames)
-    const AllGenres = useSelector ((state) => state.genres)
-    const [orden, setOrden] = useState('')
+    const allVideoGames = useSelector ((state) => state.videogames);
+    const AllGenres = useSelector ((state) => state.genres);
+    const [orden, setOrden] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+
+    
 
     //Estados locales para el paginado
     const [currentPage, setCurrentPage] = useState(1)
@@ -35,7 +40,15 @@ export default function Home(){
     useEffect (() =>{
         dispatch(getVideogames())
         dispatch(getGenres())
-    },[dispatch])
+    },[dispatch]);
+
+
+    useEffect(() => {
+        dispatch(getVideogames())
+          .then(() => setIsLoading(false));
+        dispatch(getGenres())
+      }, [dispatch]);
+      
 
 
 
@@ -135,9 +148,18 @@ export default function Home(){
 
                 <div className="cardbox">
 
-                {currentVideogames && currentVideogames.map((c) =>{
+
+
+                
+               {isLoading &&   <Loader/>  }
+                         
+
+
+             
+              {currentVideogames && currentVideogames.map((c) =>{
                  
             return (
+                
                 <div >
                     
                     
@@ -146,6 +168,8 @@ export default function Home(){
                 
 
                 </div>
+
+                
               );
             })} 
             </div>
@@ -153,6 +177,7 @@ export default function Home(){
             
 
             </div>
+            
         </div>
         
     )
