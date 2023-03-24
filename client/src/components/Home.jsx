@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGenres, getVideogames } from "../actions";
+import { getGenres, getVideogames, orderByName , orderByRating,FilterByGenres } from "../actions";
 import {Link} from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
