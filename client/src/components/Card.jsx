@@ -19,10 +19,8 @@ export default function Card({id, name, background_image, genres}){
         <p>
           
         </p>
-        <a href="#" class="read-more">
-          Details 
-          
-        </a>
+        <Link class="read-more" to = {'/home/' + id} >Details</Link>
+        
       </div>
     </div>
   </article>
