@@ -13,17 +13,18 @@ export default function Home(){
     const dispatch = useDispatch();
     const allVideoGames = useSelector ((state) => state.videogames)
     const AllGenres = useSelector ((state) => state.genres)
+    const [order, setOrder] = useState('')
 
     //Estados locales para el paginado
-    const [currentPage, setCurentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(1)
     const [videogamesPerPage, setVideogamesPerPage] = useState(15)  //Defino cuantos debe traerme por pag
-    const indexOfLastVideogames = currentPage * videogamesPerPage // 14
-    const indexOfFirstVideogames = indexOfLastVideogames - videogamesPerPage
-    const currentVideogames = allVideoGames.slice(indexOfFirstVideogames, indexOfLastVideogames)
+    const indexOfLastVideogame = currentPage * videogamesPerPage // 14
+    const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage
+    const currentVideogames = allVideoGames.slice(indexOfFirstVideogame, indexOfLastVideogame)
 
 
     const paginado = (pagNumber) => {
-        setCurentPage(pagNumber)
+        setCurrentPage(pagNumber)
     }
 
 
