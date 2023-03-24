@@ -3,7 +3,7 @@ import axios from 'axios';
 export function getVideogames(){
     return async function(dispatch){
         try{
-        var json = await axios.get ('http://localhost:3001/videogames');
+        const json = await axios.get ('http://localhost:3001/videogames');
         return dispatch({
             type: 'GET_VIDEOGAMES',
             payload: json.data
@@ -43,6 +43,8 @@ export function getGenres() {
       }
     };
   }
+
+  
   export function getDetail(payload) {
     return async function (dispatch) {
       try {
