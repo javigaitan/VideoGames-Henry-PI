@@ -1,7 +1,9 @@
 
 const InitialState = {
     videogames : [],
-    allVideogames: []
+    allVideogames: [],
+    genres: [],
+    detail: []
 }
 
 function rootReducer (state= InitialState, action){
