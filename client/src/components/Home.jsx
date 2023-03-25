@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
 import Loader from "./Loader";
+import SearchBar from "./SearchBar";
 
 
 
@@ -108,7 +109,11 @@ export default function Home(){
             </botton>
             <Link className="btn btn-up" to= '/videogames'> Crear VideoJuego</Link>
 
-            <div  >
+            <div>
+                <SearchBar/>
+            </div>
+
+            <div>
 
             <div className="filtros"  >
                 <select onChange={e =>handleSortRating(e)} className="btn btn-filter"  >
