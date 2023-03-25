@@ -14,10 +14,11 @@ import SearchBar from "./SearchBar";
 export default function Home(){
 
     const dispatch = useDispatch();
-    const allVideoGames = useSelector ((state) => state.videogames);
+    const allVideoGames = useSelector((state) => state.videogames);
     const AllGenres = useSelector ((state) => state.genres);
     const [orden, setOrden] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+
 
     
 
@@ -26,7 +27,7 @@ export default function Home(){
     const [videogamesPerPage, setVideogamesPerPage] = useState(15)  //Defino cuantos debe traerme por pag
     const indexOfLastVideogame = currentPage * videogamesPerPage // 14
     const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage
-    const currentVideogames = allVideoGames.slice(indexOfFirstVideogame, indexOfLastVideogame)
+    const currentVideogames = allVideoGames?.slice(indexOfFirstVideogame, indexOfLastVideogame)
 
 
     const paginado = (pagNumber) => {
@@ -110,6 +111,8 @@ export default function Home(){
             <Link className="btn btn-up" to= '/videogames'> Crear VideoJuego</Link>
 
             <div>
+
+                {isLoading &&   <Loader/>  }
                 <SearchBar/>
             </div>
 
@@ -142,26 +145,24 @@ export default function Home(){
                     
                 </select>
 
-                </div>
+                </div >
 
-                <Paginado
+                <div className=" paginado">
+
+                <Paginado 
 
                 videogamesPerPage = {videogamesPerPage}
-                allVideoGames = {allVideoGames.length}
+                allVideoGames = {allVideoGames?.length}
                 paginado = {paginado}
                 />
 
+                 </div> 
+
                 <div className="cardbox">
 
-
-
-                
-               {isLoading &&   <Loader/>  }
-                         
-
-
+                        
              
-              {currentVideogames && currentVideogames.map((c) =>{
+              {currentVideogames && currentVideogames.map((c) =>{       
                  
             return (
                 

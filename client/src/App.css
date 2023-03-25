@@ -45,6 +45,10 @@ p{
   margin-top: 2rem;
 }
 
+.paginado{
+  margin: 25px;
+  padding: 25px;
+}
 
 .btn {
   width: max-content;
