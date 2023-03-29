@@ -219,7 +219,7 @@ article:has(:hover, :focus) {
 
 .btn-back{
   margin: 30px;
-   display: flex;
+  display: flex;
   justify-content: left;
   font-weight: bold;
   border: 2px solid var(--color-primary);
@@ -231,6 +231,67 @@ article:has(:hover, :focus) {
   margin: 5px;
 
 } 
+
+.btn-create{
+  font-weight: bold;
+  border: 2px solid var(--color-white);
+  padding-bottom: 10px;
+  margin: 15px;
+  color: var(--color-white);
+  font-size: large;
+
+}
+
+.form{
+  display: flex;
+  flex-direction:column;
+  gap: 1.2rem;
+}
+
+
+.titleform{
+  color: var(--color-white);
+  padding: 5px;
+  margin: 5px;
+
+
+}
+
+
+input,
+textarea {
+  width: 25%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  
+  border: 2px solid var(--color-bg--buttom);
+  resize: none;
+  color: var(--color-bg);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.platforms {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-white);
+}
+
+.containercolums {
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 10px;
+}
 
 
 /*  Responsive */
