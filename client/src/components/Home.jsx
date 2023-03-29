@@ -105,9 +105,9 @@ export default function Home(){
 
             
 
-            <botton className="btn btn-up" onClick= {e =>{handleClick(e)}}>
+            <button className="btn btn-up" onClick= {e =>{handleClick(e)}}>
                 Resetear todo los  juegos nuevamente
-            </botton>
+            </button>
             <Link className="btn btn-up" to= '/videogames'> Crear VideoJuego</Link>
 
             <div>
@@ -162,7 +162,8 @@ export default function Home(){
 
                         
              
-              {currentVideogames && currentVideogames.map((c) =>{       
+              {currentVideogames && currentVideogames.map((c) =>{      
+                 
                  
             return (
                 
