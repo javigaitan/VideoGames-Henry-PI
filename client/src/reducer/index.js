@@ -23,6 +23,12 @@ function rootReducer (state= InitialState, action){
                 };
 
 
+        case 'POST_GAME':
+          return {
+            ...state,
+          }
+
+
         case 'FILTER_BY_GENRES':
             const allVideogamesGenres = state.allVideogames;
             const genresFilter = 
