@@ -1,4 +1,3 @@
-
 const InitialState = {
     videogames : [],
     allVideogames: [],
@@ -60,11 +59,11 @@ function rootReducer (state= InitialState, action){
 
 
        case "FILTER_CREATED":
-      const allVideogamesOrigen = state.allVideogames;
+      const videogames = state.allVideogames;
       const createdFilter =
         action.payload === "created"
-          ? allVideogamesOrigen.filter((e) => e.createdInDb)
-          : allVideogamesOrigen.filter((e) => !e.createdInDb); //que va a tener la data q yo quiero filtrar
+          ? videogames.filter((e) => e.createdInDb)
+          : videogames.filter((e) => !e.createdInDb); //que va a tener la data q yo quiero filtrar
       return {
         ...state,
         videogames:

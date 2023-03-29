@@ -23,17 +23,16 @@ export default function Home(){
     
 
     //Estados locales para el paginado
-    const [currentPage, setCurrentPage] = useState(1)
-    const [videogamesPerPage, setVideogamesPerPage] = useState(15)  //Defino cuantos debe traerme por pag
-    const indexOfLastVideogame = currentPage * videogamesPerPage // 14
-    const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage
-    const currentVideogames = allVideoGames?.slice(indexOfFirstVideogame, indexOfLastVideogame)
+    const [currentPage,setCurrentPage] = useState(1)
+    const [gamesPerPage] = useState(15)  //Defino cuantos debe traerme por pag
+    const indexOfLastGame = currentPage * gamesPerPage
+    const indexOfFirstGame = indexOfLastGame - gamesPerPage
+    const currentGames = allVideoGames.slice(indexOfFirstGame, indexOfLastGame)
 
 
-    const paginado = (pagNumber) => {
-        setCurrentPage(pagNumber)
+    const paginado = (pageNumber) =>{
+        setCurrentPage(pageNumber)
     }
-
 
 
 
@@ -90,6 +89,10 @@ export default function Home(){
             setOrden(`Ordenado ${e.target.value}`)
         }
         
+        function handlefilterCreated(e){
+            e.preventDefault()
+            dispatch(filterCreated(e.target.value))
+        }
 
 
 
@@ -129,7 +132,7 @@ export default function Home(){
                     <option value='desc'>Z-A</option>
                 </select>
 
-                <select onChange={e =>handleFilterCreated(e)} className="btn btn-filter" >
+                <select onChange={e =>handlefilterCreated(e)} className="btn btn-filter" >
                     <option value='all'>Todos</option>
                     <option value='created'>Creados</option>
                     <option value='api'>Existentes</option>
@@ -151,8 +154,8 @@ export default function Home(){
 
                 <Paginado 
 
-                videogamesPerPage = {videogamesPerPage}
-                allVideoGames = {allVideoGames?.length}
+               gamesPerPage = {gamesPerPage}
+               allGames = {allVideoGames.length}
                 paginado = {paginado}
                 />
 
@@ -162,7 +165,7 @@ export default function Home(){
 
                         
              
-              {currentVideogames && currentVideogames.map((c) =>{      
+              {currentGames && currentGames.map((c) =>{      
                  
                  
             return (

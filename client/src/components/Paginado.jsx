@@ -1,23 +1,25 @@
 import React from "react";
 
-export default function Paginado ({videogamesPerPage, allVideogames, paginado}){
-    const pagNumber =  [];
+export default function Paginado({gamesPerPage, allGames, paginado}) {
+    const pageNumbers = []
 
-    for (let i =0; i<Math.ceil(allVideogames/videogamesPerPage); i++){
-        pagNumber.push(i)
+    for(let i = 0; i < Math.ceil(allGames/gamesPerPage); i++){
+        pageNumbers.push(i + 1)
     }
 
+    let liId = 0
+
     return(
-        <nav className="">
-            <ul className="btn">
-                {pagNumber && pagNumber.map(number =>
-    
-                    <li className="btn" key={number}>
-                    <a onClick={() => paginado(number)} >{number}</a>
-                    </li>
-                )}
-            </ul>
-        </nav>
+        <div className="">
+            {
+            pageNumbers?.map(e => {
+                liId++
+                return(
+                    <button className='btn' key={liId} onClick={() => paginado(e)}>{e}</button>
+                )
+            })
+            }
+        </div>
     )
 
 
