@@ -18,6 +18,23 @@ h5 {
 }
 
 
+:root {
+
+  --color-bg--buttom: #0070cc;
+  --color-bg: #002B5B;
+  --color-bg-variant: #2B4865;
+  --color-primary: #256D85;
+  --color-primary-variant: rgba(77, 181, 255, 0.4);
+  --color-white: #E7F6F2;
+  --color-light: rgba(255, 255, 255, 0.6);
+
+  --transition: all 400ms ease;
+
+  --container-width-lg: 75%;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
+}
+
 p{
   color: var(--color-white);
 }
@@ -68,22 +85,7 @@ p{
   border-color: transparent;
 }
 
-:root {
 
-  --color-bg--buttom: #0070cc;
-  --color-bg: #002B5B;
-  --color-bg-variant: #2B4865;
-  --color-primary: #256D85;
-  --color-primary-variant: rgba(77, 181, 255, 0.4);
-  --color-white: #E7F6F2;
-  --color-light: rgba(255, 255, 255, 0.6);
-
-  --transition: all 400ms ease;
-
-  --container-width-lg: 75%;
-  --container-width-md: 86%;
-  --container-width-sm: 90%;
-}
 
 body{
   background-image: url(../src/assets/bc1.png);
@@ -314,6 +316,79 @@ textarea {
 
 
 
+
+
+
+
+@media only screen and (max-width: 768px) {
+ 
+
+  body{
+    background-image: url(../src/assets/bc1movil.png);
+  }
+
+  .landing {
+    height: auto; 
+    padding: 2rem; 
+    justify-content: center;
+    display: flex;
+    justify-items: center;
+    padding-top: 15rem;
+    
+    
+  }
+
+  .homepage{
+    background-size: contain ;
+  }
+  
+  .title {
+    font-size: 2.5rem; 
+    margin-bottom: 1rem;
+    
+  }
+  
+  .title-home {
+    font-size: 1rem; 
+    margin-bottom: 1rem;
+    padding-top: 10px; 
+    border-top: 10px; 
+    margin-top: 1rem;
+  }
+  
+  .paginado {
+    margin: 10px; 
+    padding: 10px; 
+  }
+  
+  .btn {
+    font-size: 0.8rem; 
+    padding: 0.5rem 1rem; 
+    border-color: var(--color-white);
+    color: var(--color-white);
+  }
+  
+  .cardbox,
+  .articles {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 12px; 
+  }
+  
+  .filtros {
+    padding: 10px; 
+    margin: 2px; 
+  }
+  
+  .btn-up {
+    margin: 5px; 
+  }
+  
+  .btn-back {
+    margin: 20px 0 10px; 
+    text-align: center; 
+  }
+}
+
 /*  Responsive  Card*/
 
 
@@ -323,6 +398,3 @@ textarea {
     display: none;
   }
 }
-
-
-

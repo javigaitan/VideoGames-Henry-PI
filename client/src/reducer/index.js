@@ -1,9 +1,9 @@
 const InitialState = {
-    videogames : [],
-    allVideogames: [],
-    genres: [],
-    detail: []
-}
+  videogames : [],
+  allVideogames: [],
+  genres: [],
+  detail: [],
+};
 
 function rootReducer (state= InitialState, action){
     switch(action.type){
@@ -58,16 +58,16 @@ function rootReducer (state= InitialState, action){
       };
 
 
-       case "FILTER_CREATED":
+       case "FILTER_BY_CREATED":
       const videogames = state.allVideogames;
       const createdFilter =
         action.payload === "created"
-          ? videogames.filter((e) => e.createdInDb)
-          : videogames.filter((e) => !e.createdInDb); //que va a tener la data q yo quiero filtrar
+          ? videogames.filter(e => e.createdInDb)
+          : videogames.filter(e => !e.createdInDb); //que va a tener la data q yo quiero filtrar
       return {
         ...state,
         videogames:
-          action.payload === "all" ? state.allVideogames : createdFilter,
+          action.payload === "all" ? state.allVideogames : createdFilter
       };
 
 

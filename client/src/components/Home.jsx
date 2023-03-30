@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGenres, getVideogames, filterCreated, orderByName , orderByRating, filterByGenres } from "../actions";
+import { getGenres, getVideogames, filterByCreated, orderByName , orderByRating, filterByGenres } from "../actions";
 import {Link} from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
@@ -70,9 +70,10 @@ export default function Home(){
             dispatch(filterByGenres(e.target.value))
             setCurrentPage(1)
         }
-        function handleFilterCreated(e){
-            dispatch(filterCreated(e.target.value))  //e.target.value es lo que viene del select, o sea el payload
-            setCurrentPage(1)
+        function handleFilterCreation(e){
+            e.preventDefault()
+            dispatch(filterByCreated(e.target.value))  //e.target.value es lo que viene del select, o sea el payload
+            
         }
         
         function handleSort(e){
@@ -89,17 +90,12 @@ export default function Home(){
             setOrden(`Ordenado ${e.target.value}`)
         }
         
-        function handlefilterCreated(e){
-            e.preventDefault()
-            dispatch(filterCreated(e.target.value))
-        }
-
-
+    
 
 
     return(
 
-        <div>
+        <div className="homepage">
             <Link className="btn btn-back" to= '/'> Back</Link>
             
             <div className="title-home">
@@ -132,10 +128,10 @@ export default function Home(){
                     <option value='desc'>Z-A</option>
                 </select>
 
-                <select onChange={e =>handlefilterCreated(e)} className="btn btn-filter" >
+                <select onChange={e =>handleFilterCreation(e)} className="btn btn-filter" >
                     <option value='all'>Todos</option>
                     <option value='created'>Creados</option>
-                    <option value='api'>Existentes</option>
+                    <option value='existent'>Existentes</option>
                 </select>
 
 
@@ -171,6 +167,7 @@ export default function Home(){
             return (
                 
                 <div >
+
                     
                     
                     <Card id={c.id} background_image={c.background_image} name={c.name} genres={c.genres}  key={c.id} />

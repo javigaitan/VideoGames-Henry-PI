@@ -25,17 +25,6 @@ export default function Card({id, name, background_image, genres}){
     </div>
   </article>
 
-
-
-  {/*      </section> <Link to={'/home/'+id}>
-       <h3>{name}</h3>
-            
-    <img src={background_image}   alt='img no encontrada' width='300px' height='200px'/>
-       </Link> 
-               <h5>{genres}</h5>  
-
-               </div> */}
-
 </div>
 </div>
     )
