@@ -98,7 +98,7 @@ export default function Home(){
             <Link className="btn btn-back" to= '/'> Back</Link>
             
             <div className="title-home">
-            <h1  > Todos los juegos </h1>
+            <h1  > Todos los juegos en un solo sitio</h1>
             </div>
 
             
@@ -160,24 +160,22 @@ export default function Home(){
 
                         
              
-              {currentGames && currentGames.map((c) =>{      
-                 
-                 
-            return (
-                
-                <div >
-
-                    
-                    
-                    <Card id={c.id} background_image={c.background_image} name={c.name} genres={c.genres}  key={c.id} />
-
-                
-
-                </div>
-
-                
-              );
-            })} 
+                {currentGames.length > 0 ? (  currentGames.map((c) => (
+        <div >
+          <Card
+        id={c.id}
+        background_image={c.background_image}
+        name={c.name}
+        genres={c.genres}
+        key={c.id}
+         />
+       </div>
+       ))
+      ) : (
+  <div className="title-error-api">
+    <h2 className="">Ups! Puede que ocurrio un error con la conexion. Por favor intenta nuevamente</h2>
+    </div>
+)}
             </div>
 
             
