@@ -7,6 +7,7 @@ import Card from "./Card";
 import Paginado from "./Paginado";
 import Loader from "./Loader";
 import SearchBar from "./SearchBar";
+import Footer from './Footer'
 
 
 
@@ -97,7 +98,7 @@ export default function Home(){
             <Link className="btn btn-back" to= '/'> Back</Link>
             
             <div className="title-home">
-            <h1  > Todos los juegos en un solo sitio</h1>
+            <h1  > Todos los juegos </h1>
             </div>
 
             
@@ -181,6 +182,10 @@ export default function Home(){
 
             
 
+            </div>
+
+            <div>
+                <Footer/>
             </div>
             
         </div>

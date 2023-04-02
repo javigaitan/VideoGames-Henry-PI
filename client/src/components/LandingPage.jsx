@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 
+
 export default function LandingPage(){
     return(
         <div className="landing">
@@ -9,6 +10,8 @@ export default function LandingPage(){
             <Link to = '/home'>
                 <button className="btn">Comenza tu Busqueda </button>
             </Link>
+
+           
 
         </div>
     )

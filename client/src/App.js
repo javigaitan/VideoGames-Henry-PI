@@ -10,6 +10,7 @@ import Home from './components/Home';
 import CreateForm from './components/CreateForm'
 import Detail from './components/Detail.jsx'
 
+
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
       <Route path='/home' element={<Home/>} />
       <Route path='/videogame/:id' element={<Detail/>} />
       <Route path='/videogames' element={<CreateForm/>} />
+
 
       </Routes>
 

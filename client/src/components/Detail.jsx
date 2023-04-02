@@ -29,19 +29,19 @@ return(
 
             <div>
                 
-            <h1> {myVideogame.name}</h1>
-                <img src={myVideogame.background_image} alt={myVideogame.name} width='500px' height='500px' />
-                <h2>Generos:</h2>
+            <h1 className="title-detail"> {myVideogame.name}</h1>
+                <img src={myVideogame.background_image} alt={myVideogame.name} width='500px' height='350px' />
+                <h2 className="title-detail">Generos:</h2>
                 {myVideogame.genres?.map((e)=>(
                     <p key={e.id}>{e}</p>
                 ))}
-               <h2>Descripción:</h2>            
-                 <div  dangerouslySetInnerHTML={{__html: myVideogame.description}}></div>
-                 <h2>Fecha de lanzamiento:</h2>
+               <h2 className="title-detail">Descripción:</h2>            
+                 <div className="description-detail" dangerouslySetInnerHTML={{__html: myVideogame.description}}></div>
+                 <h2 className="title-detail">Fecha de lanzamiento:</h2>
         <p>{myVideogame.released}</p>
-        <h2>Rating:</h2>
+        <h2 className="title-detail">Rating:</h2>
         <p>{myVideogame.rating}</p>
-                    <h2>Plataformas:</h2>
+                    <h2 className="title-detail">Plataformas:</h2>
                     {myVideogame.platforms?.map((e)=>(
                         <p key={e.id}>{e}</p>
                     ))}

@@ -95,6 +95,37 @@ body{
   
 }
 
+.title-detail{
+  padding: 5px;
+  margin: 5px;
+  font-weight: bolder;
+
+}
+
+.description-detail{
+  margin: 10px;
+  padding: 5px;
+
+
+}
+
+
+
+.title-footer{
+  margin: 5px;
+  padding-top: 15px ;
+  justify-content: end;
+}
+
+.footer-copyright{
+  color: var(--color-white);
+  padding-bottom: 5px;
+  border-bottom: 20px ;
+}
+
+.footer-copyright a{
+  color: var(--color-white);
+}
 
 
 .App {
@@ -381,6 +412,7 @@ textarea {
     border-color: var(--color-white);
     color: var(--color-white);
   }
+  
   
   .cardbox,
   .articles {
