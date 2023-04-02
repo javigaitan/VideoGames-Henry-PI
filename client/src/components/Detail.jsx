@@ -3,18 +3,16 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getDetail } from "../actions";
-
+import PropTypes from "prop-types";
 
 
 export default function Detail(){
+    const dispatch = useDispatch();
+    const {id} = useParams();
 
-    const dispatch = useDispatch()
-
-const {id} = useParams();
-
-    useEffect(()=>{
-        dispatch(getDetail(id)) // de esta forma accedo al ID de ese detalle
-    }, [dispatch, id])
+ useEffect(()=>{
+ dispatch(getDetail(id)) // de esta forma accedo al ID de ese detalle
+}, [dispatch, id])
 
 const myVideogame = useSelector((state)=> state.detail)
 
@@ -27,8 +25,7 @@ return(
                     </Link>
 
 
-            {
-            myVideogame.length > 0 ? 
+            { myVideogame && Object.keys(myVideogame).length > 0 ?(
 
             <div>
                 
@@ -48,11 +45,17 @@ return(
                     {myVideogame.platforms?.map((e)=>(
                         <p key={e.id}>{e}</p>
                     ))}
-                    </div> : 
+                    </div> ): (
 
                     <p className='lds-dual-ring loader' >Cargando...</p>
 
-                    }
+                    )}
                     
         </div>
-)}
+);
+}
+Detail.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
+    myVideogame: PropTypes.object.isRequired,
+};
