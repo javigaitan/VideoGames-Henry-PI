@@ -19,7 +19,7 @@ export default function Card({id, name, background_image, genres}){
         <p>
           
         </p>
-        <Link class="read-more" to = {'/home/' + id} >Details</Link>
+        <Link class="read-more" to = {'/videogame/' + id} >Details</Link>
         
       </div>
     </div>

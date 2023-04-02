@@ -20,7 +20,7 @@ function App() {
 
       <Route exact path='/' element={<LandingPage/>} />
       <Route path='/home' element={<Home/>} />
-      <Route path='/home/:id' element={<Detail/>} />
+      <Route path='/videogame/:id' element={<Detail/>} />
       <Route path='/videogames' element={<CreateForm/>} />
 
       </Routes>
