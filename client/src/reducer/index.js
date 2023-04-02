@@ -58,17 +58,13 @@ function rootReducer (state= InitialState, action){
       };
 
 
-       case "FILTER_BY_CREATED":
-      const videogames = state.allVideogames;
-      const createdFilter =
-        action.payload === "created"
-          ? videogames.filter(e => e.createdInDb)
-          : videogames.filter(e => !e.createdInDb); //que va a tener la data q yo quiero filtrar
-      return {
-        ...state,
-        videogames:
-          action.payload === "all" ? state.allVideogames : createdFilter
-      };
+      case "FILTER_CREATED":
+        const games = state.allGames 
+            const createdFilter = action.payload === 'created' ? games.filter(e => e.createdInDb) : games.filter(e => !e.createdInDb)
+            return{
+                ...state,
+                games: action.payload === 'all' ? state.allGames : createdFilter
+            }
 
 
 

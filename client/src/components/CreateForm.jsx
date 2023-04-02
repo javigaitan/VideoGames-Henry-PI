@@ -94,14 +94,14 @@ export default function CreateForm() {
             <div className="titleform">
               <label> Nombre: </label>
               <input
-                type="text" placeholder='Escribe el nombre aqui'
+                type="text" placeholder='Ingresa el nombre aqui'
                 onChange={(e) => setObjeto({ ...objeto, name: e.target.value })}
               />
             </div>
             <div className="titleform">
               <label>Descripcion: </label>
               <input
-                type="text" placeholder='Escribe una breve descripcion'
+                type="text" placeholder='Ingresa una breve descripcion'
                 onChange={(e) =>
                   setObjeto({ ...objeto, description: e.target.value })
                 }
@@ -110,7 +110,7 @@ export default function CreateForm() {
             <div className="titleform">
               <label>Imagen: </label>
               <input
-                type="text"
+                type="text" placeholder='Ingresa el link de la imagen'
                 onChange={(e) =>
                   setObjeto({ ...objeto, background_image: e.target.value })
                 }

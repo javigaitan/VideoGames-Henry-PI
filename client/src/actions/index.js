@@ -93,13 +93,13 @@ export function getGenres() {
   }
 
 
-  export function filterByCreated(payload) {
-    //el payload es el value de la opcion que vos elijas
-    return {
-      type: "FILTER_BY_CREATED",
-      payload,
-    };
-  }
+  export function filterCreated (payload){
+    console.log(payload)
+     return{
+       type:"FILTER_CREATED",
+       payload
+     }
+   }
 
 
   export function orderByName(payload) {

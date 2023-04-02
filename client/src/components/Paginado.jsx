@@ -7,15 +7,16 @@ export default function Paginado({gamesPerPage, allGames, paginado}) {
         pageNumbers.push(i + 1)
     }
 
+
     let liId = 0
 
     return(
-        <div className="">
+        <div className="paginado">
             {
             pageNumbers?.map(e => {
                 liId++
                 return(
-                    <button className='btn' key={liId} onClick={() => paginado(e)}>{e}</button>
+                    <button className='btn paginadobox' key={liId} onClick={() => paginado(e)}>{e}</button>
                 )
             })
             }

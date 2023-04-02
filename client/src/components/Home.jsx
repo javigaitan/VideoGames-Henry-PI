@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGenres, getVideogames, filterByCreated, orderByName , orderByRating, filterByGenres } from "../actions";
+import { getGenres, getVideogames, filterCreated, orderByName , orderByRating, filterByGenres } from "../actions";
 import {Link} from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
@@ -71,9 +71,7 @@ export default function Home(){
             setCurrentPage(1)
         }
         function handleFilterCreation(e){
-            e.preventDefault()
-            dispatch(filterByCreated(e.target.value))  //e.target.value es lo que viene del select, o sea el payload
-            
+            dispatch(filterCreated(e.target.value))
         }
         
         function handleSort(e){
@@ -130,13 +128,13 @@ export default function Home(){
 
                 <select onChange={e =>handleFilterCreation(e)} className="btn btn-filter" >
                     <option value='all'>Todos</option>
+                    <option value='api'>Existentes</option>
                     <option value='created'>Creados</option>
-                    <option value='existent'>Existentes</option>
                 </select>
 
 
                 <select onChange={e =>handleFilterGenres(e)} className="btn btn-filter" >
-                    <option value='all'>Todos</option>
+                    <option value='all'>Todos los Generos</option>
                     {AllGenres?.map((e) =>(
                         <option key={e} value={e}> {e} </option>
 

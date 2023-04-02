@@ -295,6 +295,20 @@ textarea {
   margin: 0 10px;
 }
 
+.paginado{
+  padding: 5px;
+  margin: 5px;
+  
+}
+
+.paginadobox{
+  
+  margin: 5px;
+}
+
+.paginadobox:hover {
+  scale: 1.2;
+}
 
 /*  Responsive */
 

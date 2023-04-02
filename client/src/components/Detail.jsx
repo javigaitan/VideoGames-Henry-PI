@@ -31,7 +31,7 @@ return(
             myVideogame.length > 0 ? 
 
             <div>
-                console.log('entre al if')
+                
             <h1> {myVideogame.name}</h1>
                 <img src={myVideogame.background_image} alt={myVideogame.name} width='500px' height='500px' />
                 <h2>Generos:</h2>
