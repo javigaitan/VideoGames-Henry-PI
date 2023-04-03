@@ -59,11 +59,13 @@ function rootReducer (state= InitialState, action){
 
 
       case "FILTER_CREATED":
-        const games = state.allGames 
-            const createdFilter = action.payload === 'created' ? games.filter(e => e.createdInDb) : games.filter(e => !e.createdInDb)
+
+           
+         
+            const createdFilter = action.payload === 'created' ? state.allVideogames.filter(el => el.createInDb) : state.allVideogames.filter(el => !el.createInDb)
             return{
                 ...state,
-                games: action.payload === 'all' ? state.allGames : createdFilter
+                videogames: action.payload === 'all' ? state.allVideogames: createdFilter
             }
 
 

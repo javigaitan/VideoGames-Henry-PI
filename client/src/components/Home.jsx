@@ -149,38 +149,33 @@ export default function Home(){
 
                 <Paginado 
 
-               gamesPerPage = {gamesPerPage}
-               allGames = {allVideoGames.length}
-                paginado = {paginado}
+                  gamesPerPage = {gamesPerPage}
+                  allGames = {allVideoGames.length}
+                  paginado = {paginado}
                 />
 
                  </div> 
 
-                <div className="cardbox">
+            <div className="cardbox">
+                    {currentGames.length > 0 ? (  currentGames.map((c) => (
+             <div >
+             <Card
+               id={c.id}
+               background_image={c.background_image}
+               name={c.name}
+               genres={c.genres}
+               key={c.id}
+             />
+             </div>
+             ))
+             ) : (
+        <div className="title-error-api">
+          <h2 className="">Ups! Puede que ocurrio un error con la conexion. Por favor intenta nuevamente</h2>
+        </div>
 
-                        
-             
-                {currentGames.length > 0 ? (  currentGames.map((c) => (
-        <div >
-          <Card
-        id={c.id}
-        background_image={c.background_image}
-        name={c.name}
-        genres={c.genres}
-        key={c.id}
-         />
-       </div>
-       ))
-      ) : (
-  <div className="title-error-api">
-    <h2 className="">Ups! Puede que ocurrio un error con la conexion. Por favor intenta nuevamente</h2>
-    </div>
-)}
-            </div>
-
-            
-
-            </div>
+        )}
+        </div>
+         </div>
 
             <div>
                 <Footer/>

@@ -9,6 +9,9 @@ import LandingPage from './components/LandingPage'
 import Home from './components/Home';
 import CreateForm from './components/CreateForm'
 import Detail from './components/Detail.jsx'
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:3001/'; //paso de refactorizacion
+
 
 
 function App() {
