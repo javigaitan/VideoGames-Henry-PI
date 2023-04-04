@@ -114,11 +114,6 @@ export default function Home(){
 
             
 
-            <button className="btn btn-up" onClick= {e =>{handleClick(e)}}>
-                Resetear todo los  juegos nuevamente
-            </button>
-            <Link className="btn btn-up" to= '/videogames'> Crear VideoJuego</Link>
-
             <div>
 
                 {isLoading &&   <Loader/>  }
@@ -164,11 +159,14 @@ export default function Home(){
                     
                 </select>
 
-
-
-
-
                 </div >
+
+                
+            <button className="btn btn-filter" onClick= {e =>{handleClick(e)}}>
+                Resetear todo los  juegos nuevamente
+            </button>
+            <Link className="btn btn-filter" to= '/videogames'> Crear VideoJuego</Link>
+
 
                 <div className=" paginado">
 

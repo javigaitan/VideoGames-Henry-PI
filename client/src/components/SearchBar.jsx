@@ -29,10 +29,11 @@ export default function SearchBar(){
 
 
     return (
-        <div className='searchdiv'>
-            
-            <input className='btn' type='text' placeholder='Search' onChange={e => handleChange(e)} /><button className='btn' type='submit' onClick={e => handleSubmit(e)} >Search</button>
-        </div>
+        <form className="ps-search-form">
+      <input type="text" placeholder="Buscar..." className="btn btn-filter" onChange={handleChange} value={name} />
+      <button type="submit" className="btn btn-filter" onClick={handleSubmit}> Buscar <i className="fa fa-search"></i>
+      </button>
+     </form>
     )
 
 

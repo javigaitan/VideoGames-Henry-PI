@@ -53,13 +53,32 @@ p{
   margin-bottom: 2rem;
 }
 
+
+.title-landing{
+    font-size: 50px;
+    
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 45px;
+  
+}
+
+
 .title-home{
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-top: 20px;
-  border-top: 20px;
-  margin-top: 2rem;
+  font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 45px;
+  
 }
 
 .paginado{
@@ -68,13 +87,19 @@ p{
 }
 
 .btn {
+  background-color: #003087;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  
+  font-weight: bold;
   width: max-content;
   display: inline-block;
-  color: var(--color-primary);
+  
   padding: 0.75rem 1.2rem;
   border-radius: 0.4rem;
   cursor: pointer;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-white);
   transition: var(--transition);
   background: var(--color-prymary);
 }
@@ -256,20 +281,55 @@ article:has(:hover, :focus) {
   margin: 5px;
 }
 
+.ps-button {
+  background-color: #003087;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.ps-button:hover {
+  background-color: #fff;
+  color: #003087;
+  border: 2px solid #003087;
+}
+
+
+
+
 
 .btn-up{
   margin: 10px;
 } 
 
 .btn-back{
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
   margin: 30px;
   display: flex;
   justify-content: left;
   font-weight: bold;
-  border: 2px solid var(--color-primary);
-  
-
+  transition-duration: 0.4s;
+  cursor: pointer;
 } 
+
+
+.btn-back:hover {
+  background-color: #fff;
+  color: #003087;
+  border: 2px solid #003087;
+}
+
+
 
 .btn-filter {
   margin: 5px;
@@ -285,6 +345,118 @@ article:has(:hover, :focus) {
   font-size: large;
 
 }
+
+.ps-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ps-search-input {
+  border: none;
+  border-bottom: 2px solid #003087;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+  width: 200px;
+}
+
+
+
+
+
+.ps-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ps-search-input {
+  border: none;
+  border-bottom: 2px solid #003087;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.ps-search-submit {
+  background-color: #003087;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+
+.ps-search-submit:hover {
+  background-color: #fff;
+  color: #003087;
+  border: 2px solid #003087;
+}
+
+.fa-search {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Estilos para los filtros */
+.filtros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+/* Estilos para los botones de filtro */
+.btn-filter {
+  background-color: #2e2e2e;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+
+/* Estilos para las opciones del select */
+select {
+  background-color: #2e2e2e;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Estilos para la flecha del select */
+select:after {
+  content: "\25BC";
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+
+
+
+
+
+
+
 
 .form{
   display: flex;
