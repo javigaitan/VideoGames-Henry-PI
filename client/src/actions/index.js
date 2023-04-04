@@ -19,6 +19,7 @@ export function getVideogames(){
 
 export function getNameVideogames(payload) {
   return async function (dispatch) {
+    try {
    
       const json = await axios.get(
         "/videogames?name=" + payload
@@ -29,6 +30,9 @@ export function getNameVideogames(payload) {
 
         payload: json.data, //es lo que devuleve la ruta una vez q le asigno un name
       });
+    } catch (error) {
+      console.log(error);
+    }
     
   };
 }
@@ -73,14 +77,21 @@ export function getGenres() {
 
   export function postGame(payload) {
     return async function (dispatch) {
+      try {
       
         let response = await axios.post("/videogame", payload);
         return response
       
-      }
+      }catch (error) {
+      console.log(error);
+    }
     };
+  }
+    
 
 
+
+    
 
   //Filtros
 

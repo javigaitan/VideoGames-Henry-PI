@@ -171,7 +171,9 @@ export default function Home(){
              ) : (
         <div className="title-error-api">
           <h2 className="">Ups! Puede que ocurrio un error con la conexion. Por favor intenta nuevamente</h2>
+          
         </div>
+        
 
         )}
         </div>

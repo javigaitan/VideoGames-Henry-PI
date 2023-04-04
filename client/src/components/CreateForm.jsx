@@ -77,7 +77,6 @@ export default function CreateForm() {
     
         dispatch(postGame(objeto));
         alert("Videojuego Agregado Exitosamente!");
-
       };
     
 
