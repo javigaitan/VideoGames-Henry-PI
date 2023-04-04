@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGenres, getVideogames, filterCreated, orderByName , orderByRating, filterByGenres } from "../actions";
+import { getGenres, getVideogames, filterCreated, filterByPlataforms, orderByName , orderByRating, filterByGenres, getPlataforms } from "../actions";
 import {Link} from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
@@ -17,8 +17,10 @@ export default function Home(){
     const dispatch = useDispatch();
     const allVideoGames = useSelector((state) => state.videogames);
     const AllGenres = useSelector ((state) => state.genres);
+    const allVideogamesPlatafoms = useSelector ((state) => state.plataforms);
     const [orden, setOrden] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    
 
 
     
@@ -42,6 +44,7 @@ export default function Home(){
     useEffect (() =>{
         dispatch(getVideogames())
         dispatch(getGenres())
+        dispatch(getPlataforms())
     },[dispatch]);
 
 
@@ -49,6 +52,8 @@ export default function Home(){
         dispatch(getVideogames())
           .then(() => setIsLoading(false));
         dispatch(getGenres())
+        dispatch(getPlataforms())
+
       }, [dispatch]);
       
 
@@ -66,11 +71,17 @@ export default function Home(){
         e.preventDefault();
         dispatch(getVideogames())
         }
+
+        function handleFilterPlataforms(e){
+            dispatch(filterByPlataforms(e.target.value))
+            setCurrentPage(1)
+        }
         
         function handleFilterGenres(e){
             dispatch(filterByGenres(e.target.value))
             setCurrentPage(1)
         }
+
         function handleFilterCreation(e){
             dispatch(filterCreated(e.target.value))
         }
@@ -143,6 +154,20 @@ export default function Home(){
                     
                 </select>
 
+
+                <select onChange={e =>handleFilterPlataforms(e)} className="btn btn-filter" >
+                    <option value='all'>Todas las Plataformas</option>
+                    {allVideogamesPlatafoms?.map((e) =>(
+                        <option key={e} value={e}> {e} </option>
+
+                    ))}
+                    
+                </select>
+
+
+
+
+
                 </div >
 
                 <div className=" paginado">
@@ -170,7 +195,7 @@ export default function Home(){
              ))
              ) : (
         <div className="title-error-api">
-          <h2 className="">Ups! Puede que ocurrio un error con la conexion. Por favor intenta nuevamente</h2>
+          <h2 >Ups! Puede que ocurrio un error con la conexion. Por favor intenta nuevamente</h2>
           
         </div>
         

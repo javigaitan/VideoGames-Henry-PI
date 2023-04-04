@@ -3,6 +3,8 @@ const InitialState = {
   allVideogames: [],
   genres: [],
   detail: [],
+  plataforms: [],
+
 };
 
 function rootReducer (state= InitialState, action){
@@ -16,9 +18,9 @@ function rootReducer (state= InitialState, action){
 
 
         case 'GET_GENRES':
-                return{
-                    ...state,
-                    genres: action.payload,
+          return{
+             ...state,
+             genres: action.payload,
                 };
 
 
@@ -27,25 +29,8 @@ function rootReducer (state= InitialState, action){
             ...state,
           }
 
-
-        case 'FILTER_BY_GENRES':
-            const allVideogamesGenres = state.allVideogames;
-            const genresFilter = 
-            action.payload ==='all' 
-            ? allVideogamesGenres
-             : allVideogamesGenres.filter((e) =>
-              e.genres.includes(action.payload)
-            );
-            return{
-                ...state,
-                videogames: genresFilter,
-
-            };
-
         case "GET_NAME_VIDEOGAMES":
-            
-        
-        return {
+         return {
         ...state,
         videogames: action.payload, //siempre voy a trabajr sobre lo que estoy fitrando
       };
@@ -58,12 +43,39 @@ function rootReducer (state= InitialState, action){
       };
 
 
+      case 'FILTER_BY_GENRES':
+        const allVideogamesGenres = state.allVideogames;
+        const genresFilter = 
+        action.payload ==='all' 
+        ? allVideogamesGenres
+         : allVideogamesGenres.filter((e) =>
+          e.genres.includes(action.payload)
+        );
+        return{
+            ...state,
+            videogames: genresFilter,
+
+        };
+
+        case 'FILTER_BY_PLATAFORMS':
+          const allVideogamesPlatafoms = state.allVideogames;
+          const plataformsFilter = action.payload === 'all'
+          ? allVideogamesPlatafoms
+           : allVideogamesPlatafoms.filter((e) => 
+           e.plataforms.includes(action.payload)
+           );
+           return{
+               ...state,
+               videogames: plataformsFilter,
+   
+           };
+
+
       case "FILTER_CREATED":
             const createdFilter = action.payload === 'created' ? state.allVideogames.filter(el => el.createInDb) : state.allVideogames.filter(el => !el.createInDb)
             return{
                 ...state,
-                videogames: action.payload === 'all' ? state.allVideogames: createdFilter
-            }
+                videogames: action.payload === 'all' ? state.allVideogames: createdFilter}
 
 
 

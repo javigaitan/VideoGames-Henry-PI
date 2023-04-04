@@ -51,6 +51,20 @@ export function getGenres() {
     };
   }
 
+  export function getPlataforms() {
+    return async function (dispatch) {
+      try {
+        const json = await axios.get("/platforms");
+        return dispatch({
+          type: "GET_PLATAFORMS",
+          payload: json.data,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  }
+
   
 
     export function getDetail(id) {
@@ -99,6 +113,13 @@ export function getGenres() {
   export function filterByGenres(payload) {
     return {
       type: "FILTER_BY_GENRES",
+      payload,
+    };
+  }
+
+  export function filterByPlataforms(payload){
+    return{
+      type: "FILTER_BY_PLATAFORMS",
       payload,
     };
   }
