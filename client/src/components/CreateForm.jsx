@@ -86,7 +86,9 @@ export default function CreateForm() {
 
         <div  className="top-bar" >
 
-        <Link className="install-button" to= '/home'> Back</Link>
+        <Link to= '/home'>
+           <button className="install-button">Back</button>
+           </Link>
 
         </div>
           <h1 className="title">Create your Game!</h1>

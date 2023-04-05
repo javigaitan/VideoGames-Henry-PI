@@ -20,32 +20,58 @@ return(
     
         <div>
 
+                   <div  className="top-bar" >
+
                     <Link to= '/home'>
-                        <button className="btn btn-back">Back</button>
+                        <button className="install-button">Back</button>
                     </Link>
+
+                     </div>
 
 
             { myVideogame && Object.keys(myVideogame).length > 0 ?(
 
-            <div>
-                
-            <h1 className="title-detail"> {myVideogame.name}</h1>
-                <img src={myVideogame.background_image} alt={myVideogame.name} width='500px' height='350px' />
-                <h2 className="title-detail">Generos:</h2>
-                {myVideogame.genres?.map((e)=>(
-                    <p key={e.id}>{e}</p>
-                ))}
-               <h2 className="title-detail">Descripción:</h2>            
-                 <div className="description-detail" dangerouslySetInnerHTML={{__html: myVideogame.description}}></div>
-                 <h2 className="title-detail">Fecha de lanzamiento:</h2>
-        <p>{myVideogame.released}</p>
-        <h2 className="title-detail">Rating:</h2>
-        <p>{myVideogame.rating}</p>
-                    <h2 className="title-detail">Plataformas:</h2>
-                    {myVideogame.platforms?.map((e)=>(
-                        <p key={e.id}>{e}</p>
-                    ))}
-                    </div> ): (
+        <div>
+
+ <div className="detail-container">
+ <div className="image-container">
+    <img src={myVideogame.background_image} alt={myVideogame.name} width='500px' height='350px' />
+  </div>
+ <div className="data-container">
+    <h1 className="title-detail"> {myVideogame.name}</h1>
+
+    <h2 className="title-detail">Descripción:</h2>            
+    <div className="description-detail" dangerouslySetInnerHTML={{__html: myVideogame.description}}></div>
+
+
+</div>
+
+
+</div>
+<div className="detail-contain">
+
+    <div className="detail">
+    <h2 className="title-detail">Fecha de lanzamiento:</h2>
+    <p>{myVideogame.released}</p>
+    </div>
+    <div className="detail">
+    <h2 className="title-detail">Generos:</h2>
+    {myVideogame.genres?.map((e)=>(
+        <p key={e.id}>{e}</p>
+    ))}
+    </div>
+    <div className="detail">
+    <h2 className="title-detail">Rating:</h2>
+    <p>{myVideogame.rating}</p>
+    </div>
+    <div className="detail">
+    <h2 className="title-detail">Plataformas:</h2>
+    {myVideogame.platforms?.map((e)=>(
+        <p key={e.id}>{e}</p>
+    ))}
+    </div>
+    </div> 
+    </div>): (
 
                     <p className='lds-dual-ring loader' >Cargando...</p>
 

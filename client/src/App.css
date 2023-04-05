@@ -495,7 +495,7 @@ select:after {
   border: none;
   border-radius: 3px;
   font-size: 15px;
-
+  cursor: pointer;
   padding: 5px 20px;
   text-decoration: none;
 }
@@ -506,7 +506,46 @@ select:after {
   color: #5c7e10;
 }
 
+.detail-contain{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin: 50px auto;
+  
+}
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  width: 80%;
+}
 
+.image-container {
+  width: 50%;
+  margin-right: 50px;
+}
+
+.data-container {
+  width: 50%;
+}
+
+.title-detail {
+  margin-top: 30px;
+}
+
+.description-detail {
+  margin: 20px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.detail{
+
+  justify-content: space-around;
+}
 
 .form{
   display: flex;

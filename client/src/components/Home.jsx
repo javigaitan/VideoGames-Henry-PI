@@ -110,8 +110,11 @@ export default function Home(){
           <div  className="top-bar" >
 
 
-            <Link className="install-button" to= '/'> Back</Link>
-            <Link className="install-button" to= '/videogames'> Create Game</Link>
+            <Link  to= '/'>
+                <button className="install-button">Back</button>
+                </Link>
+
+            <Link  to= '/videogames'> <button className="install-button">Create Game</button></Link>
 
             </div>
             
