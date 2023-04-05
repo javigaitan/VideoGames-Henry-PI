@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postGame, getGenres } from "../actions";
 import { Link } from "react-router-dom";
+import Footer from './Footer'
 
 
 export default function CreateForm() {
@@ -83,22 +84,26 @@ export default function CreateForm() {
       return (
         <>
 
-        <Link className="btn btn-back" to= '/home'> Back</Link>
-          <h1 className="title">Crear VideoJuego!</h1>
+        <div  className="top-bar" >
+
+        <Link className="install-button" to= '/home'> Back</Link>
+
+        </div>
+          <h1 className="title">Create your Game!</h1>
 
 
           
     
           <form  className="form" onSubmit={handleSubmit}>
             <div className="titleform">
-              <label> Nombre: </label>
+              <label> Name: </label>
               <input
                 type="text" placeholder='Ingresa el nombre aqui'
                 onChange={(e) => setObjeto({ ...objeto, name: e.target.value })}
               />
             </div>
             <div className="titleform">
-              <label>Descripcion: </label>
+              <label>Description: </label>
               <input
                 type="text" placeholder='Ingresa una breve descripcion'
                 onChange={(e) =>
@@ -107,7 +112,7 @@ export default function CreateForm() {
               />
             </div>
             <div className="titleform">
-              <label>Imagen: </label>
+              <label>Image: </label>
               <input
                 type="text" placeholder='Ingresa el link de la imagen'
                 onChange={(e) =>
@@ -116,7 +121,7 @@ export default function CreateForm() {
               />
             </div>
             <div className="titleform">
-              <label>Lanzamiento: </label>
+              <label>Release: </label>
               <input
                 type="date"
                 onChange={(e) => setObjeto({ ...objeto, released: e.target.value })}
@@ -135,7 +140,7 @@ export default function CreateForm() {
         <div className="containercolums">
            <div className="column">
             <div className="container">
-              <label className="titleform">Generos: </label>
+              <label className="titleform">Genres: </label>
 
               <div className="platforms">
 
@@ -157,7 +162,7 @@ export default function CreateForm() {
 
             <div className="column">
             <div className="container">
-              <label className="titleform">Plataformas:</label>
+              <label className="titleform">Platforms:</label>
 
               <div className="platforms">
               {allPlatforms.map((e) => (
@@ -179,9 +184,14 @@ export default function CreateForm() {
             </div>
 
             <div >
-              <button className="btn btn-create" type="submit">Agregar Videojuego</button>
+              <button className="install-button" type="submit">Create Game</button>
             </div>
           </form>
+
+
+          <div className="footer-pos">
+                <Footer/>
+            </div>
 
           
         </>

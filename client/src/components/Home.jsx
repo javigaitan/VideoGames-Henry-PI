@@ -106,15 +106,20 @@ export default function Home(){
     return(
 
         <div className="homepage">
-            <Link className="btn btn-back" to= '/'> Back</Link>
-            
-            <div className="title-home">
-            <h1  > Todos los juegos en un solo sitio</h1>
+
+          <div  className="top-bar" >
+
+
+            <Link className="install-button" to= '/'> Back</Link>
+            <Link className="install-button" to= '/videogames'> Create Game</Link>
+
             </div>
+            
+           
 
             
 
-            <div>
+            <div >
 
                 {isLoading &&   <Loader/>  }
                 <SearchBar/>
@@ -122,10 +127,11 @@ export default function Home(){
 
             <div>
 
-            <div className="filtros"  >
+            <div className="store_nav">
+            <div className="filtros" >
                 <select onChange={e =>handleSortRating(e)} className="btn btn-filter"  >
-                    <option value='asc'>Ascendente</option>
-                    <option value='desc'>Descendente</option>
+                    <option value='asc'>Ascending</option>
+                    <option value='desc'>Descending </option>
                 </select>
 
                 <select onChange={e =>handleSort(e)} className="btn btn-filter" >
@@ -134,14 +140,14 @@ export default function Home(){
                 </select>
 
                 <select onChange={e =>handleFilterCreation(e)} className="btn btn-filter" >
-                    <option value='all'>Todos</option>
+                    <option value='all'>All</option>
                     <option value='api'>Existentes</option>
-                    <option value='created'>Creados</option>
+                    <option value='created'>Created</option>
                 </select>
 
 
                 <select onChange={e =>handleFilterGenres(e)} className="btn btn-filter" >
-                    <option value='all'>Todos los Generos</option>
+                    <option value='all'>All Genres</option>
                     {AllGenres?.map((e) =>(
                         <option key={e} value={e}> {e} </option>
 
@@ -151,7 +157,7 @@ export default function Home(){
 
 
                 <select onChange={e =>handleFilterPlataforms(e)} className="btn btn-filter" >
-                    <option value='all'>Todas las Plataformas</option>
+                    <option value='all'>All Plataforms</option>
                     {allVideogamesPlatafoms?.map((e) =>(
                         <option key={e} value={e}> {e} </option>
 
@@ -159,23 +165,21 @@ export default function Home(){
                     
                 </select>
 
+                <button className="btn btn-filter" onClick= {e =>{handleClick(e)}}>
+                Reset
+                </button>
+                
                 </div >
+                  </div >  
 
                 
-            <button className="btn btn-filter" onClick= {e =>{handleClick(e)}}>
-                Resetear todo los  juegos nuevamente
-            </button>
-            <Link className="btn btn-filter" to= '/videogames'> Crear VideoJuego</Link>
+    
+           
 
 
                 <div className=" paginado">
 
-                <Paginado 
-
-                  gamesPerPage = {gamesPerPage}
-                  allGames = {allVideoGames.length}
-                  paginado = {paginado}
-                />
+                
 
                  </div> 
 
@@ -202,7 +206,14 @@ export default function Home(){
         </div>
          </div>
 
-            <div>
+         <Paginado 
+
+                  gamesPerPage = {gamesPerPage}
+                  allGames = {allVideoGames.length}
+                  paginado = {paginado}
+                />
+
+            <div className="footer-pos">
                 <Footer/>
             </div>
             

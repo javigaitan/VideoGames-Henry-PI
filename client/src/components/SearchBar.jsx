@@ -30,8 +30,8 @@ export default function SearchBar(){
 
     return (
         <form className="ps-search-form">
-      <input type="text" placeholder="Buscar..." className="btn btn-filter" onChange={handleChange} value={name} />
-      <button type="submit" className="btn btn-filter" onClick={handleSubmit}> Buscar <i className="fa fa-search"></i>
+      <input type="text" placeholder="enter game" className="btn btn-filter" onChange={handleChange} value={name} />
+      <button type="submit" className="btn btn-filter" onClick={handleSubmit}> Search <i className="fa fa-search"></i>
       </button>
      </form>
     )

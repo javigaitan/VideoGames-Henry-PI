@@ -27,6 +27,11 @@ h5 {
   --color-primary-variant: rgba(77, 181, 255, 0.4);
   --color-white: #E7F6F2;
   --color-light: rgba(255, 255, 255, 0.6);
+  --color-new-primary-variant: rgba(23, 26, 33); 
+  --color-green-btn: #5c7e10;
+  --gpColor-Blue: #1A9FFF;
+  --gpColor-BlueHi: #00BBFF;
+  --gpColor-DustyBlue: #417a9b;
 
   --transition: all 400ms ease;
 
@@ -43,8 +48,14 @@ p{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items:start;
   height: 100vh;
+  padding-left: 20px;
+
+  background-image: url(../src/assets/social-og.jpg);
+  
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 
 .title {
@@ -87,7 +98,7 @@ p{
 }
 
 .btn {
-  background-color: #003087;
+  
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -113,10 +124,11 @@ p{
 
 
 body{
-  background-image: url(../src/assets/bc1.png);
-  
-  background-size:cover;
-  background-repeat: no-repeat;
+
+  /* background-image: url(../src/assets/homebc.png); */
+
+  background: linear-gradient(to right, var(--color-bg-variant), var(--color-bg));
+  opacity: .8;
   
 }
 
@@ -276,18 +288,31 @@ article:has(:hover, :focus) {
   
 }
 
-.filtros{
-  padding: 25px;
-  margin: 5px;
+.store_nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  height: 80px;
+  margin-right:10%;
+  margin-left:10%;
+  margin-top: 3%;
+}
+
+.filtros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .ps-button {
-  background-color: #003087;
-  color: #fff;
+  background-color: var(--color-green-btn);
+  color: var(--color-white);
   border: none;
   border-radius: 4px;
   font-size: 16px;
-  font-weight: bold;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -297,9 +322,9 @@ article:has(:hover, :focus) {
 }
 
 .ps-button:hover {
-  background-color: #fff;
-  color: #003087;
-  border: 2px solid #003087;
+  background-color: var(--color-white);
+  color: var(--color-green-btn);
+  border: 2px solid var(--color-white);
 }
 
 
@@ -331,10 +356,7 @@ article:has(:hover, :focus) {
 
 
 
-.btn-filter {
-  margin: 5px;
 
-} 
 
 .btn-create{
   font-weight: bold;
@@ -350,6 +372,7 @@ article:has(:hover, :focus) {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 3%;
 }
 
 .ps-search-input {
@@ -419,7 +442,7 @@ article:has(:hover, :focus) {
 
 /* Estilos para los botones de filtro */
 .btn-filter {
-  background-color: #2e2e2e;
+  background-color: var(--color-new-primary-variant);
   color: #fff;
   padding: 0.5rem 1rem;
   border: none;
@@ -429,7 +452,9 @@ article:has(:hover, :focus) {
   cursor: pointer;
 }
 
-
+.footer-pos{
+  margin: 15px;
+}
 
 /* Estilos para las opciones del select */
 select {
@@ -451,10 +476,35 @@ select:after {
 }
 
 
+.top-bar {
+  background-color: var(--color-new-primary-variant); 
+  height: 85px; /* Altura de 40px */
+  display: flex; /* Establecer la visualización de elementos en línea */
+  justify-content:space-between ;/* Alinear los elementos a la izquierda */
+  align-items: center; /* Alinear verticalmente los elementos en el centro */
+  padding: 0 20px; /* Añadir padding a los lados */
+}
 
+.top-bar .btn-back {
+  margin-right: 20px; /* Añadir margen derecho de 20px al botón de back */
+}
 
+.install-button {
+  background-color: var(--color-green-btn);
+  color: var(--color-white);
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
 
+  padding: 5px 20px;
+  text-decoration: none;
+}
 
+/* Estilo del botón al pasar el mouse */
+.install-button:hover {
+  background-color: var(--color-white);
+  color: #5c7e10;
+}
 
 
 
@@ -566,9 +616,8 @@ textarea {
     
   }
 
-  .homepage{
-    background-size: contain ;
-  }
+
+  
   
   .title {
     font-size: 2.5rem; 
