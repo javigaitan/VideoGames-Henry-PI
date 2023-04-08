@@ -3,7 +3,7 @@ const InitialState = {
   allVideogames: [],
   genres: [],
   detail: [],
-  plataforms: [],
+
 
 };
 
@@ -57,18 +57,7 @@ function rootReducer (state= InitialState, action){
 
         };
 
-        case 'FILTER_BY_PLATAFORMS':
-          const allVideogamesPlatafoms = state.allVideogames;
-          const plataformsFilter = action.payload === 'all'
-          ? allVideogamesPlatafoms
-           : allVideogamesPlatafoms.filter((e) => 
-           e.plataforms.includes(action.payload)
-           );
-           return{
-               ...state,
-               videogames: plataformsFilter,
-   
-           };
+        
 
 
       case "FILTER_CREATED":

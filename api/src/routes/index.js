@@ -2,7 +2,7 @@
 require("dotenv").config();
 const { Router } = require('express');
 const axios = require ('axios');
-const {Videogame, Genres} = require ('../db');
+const {Videogame, Genres, Platforms} = require ('../db');
 const {API_KEY} = process.env;
 
 

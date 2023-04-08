@@ -51,20 +51,7 @@ export function getGenres() {
     };
   }
 
-  export function getPlataforms() {
-    return async function (dispatch) {
-      try {
-        const json = await axios.get("/platforms");
-        return dispatch({
-          type: "GET_PLATAFORMS",
-          payload: json.data,
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-  }
-
+  
   
 
     export function getDetail(id) {
