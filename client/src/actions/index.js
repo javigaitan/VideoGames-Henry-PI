@@ -104,12 +104,6 @@ export function getGenres() {
     };
   }
 
-  export function filterByPlataforms(payload){
-    return{
-      type: "FILTER_BY_PLATAFORMS",
-      payload,
-    };
-  }
 
 
   export function filterCreated (payload){
