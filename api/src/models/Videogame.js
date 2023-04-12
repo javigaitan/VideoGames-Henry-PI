@@ -5,10 +5,10 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('videogame', {
     id:{
-      type: DataTypes.UUID,
+      type: DataTypes.UUID, //genera un numero random y letras
       defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
-      primaryKey:true,
+      allowNull: false, //no te permito que este vacio
+      primaryKey:true, 
 
     },
     name: {
@@ -43,7 +43,7 @@ module.exports = (sequelize) => {
     createInDb:{
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: true
+      defaultValue: true,
 
     },
 

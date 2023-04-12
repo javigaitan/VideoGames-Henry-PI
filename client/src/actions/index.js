@@ -81,7 +81,7 @@ export function getGenres() {
       try {
       
         let response = await axios.post("/videogame", payload);
-        return response
+        return response;
       
       }catch (error) {
       console.log(error);
@@ -106,12 +106,12 @@ export function getGenres() {
 
 
 
-  export function filterCreated (payload){
+  export function createdFilter(payload){
     
      return{
        type:"FILTER_CREATED",
-       payload
-     }
+       payload,
+     };
    }
 
 

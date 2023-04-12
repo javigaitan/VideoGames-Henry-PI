@@ -542,10 +542,7 @@ p {
   margin: 10px 0;
 }
 
-.detail{
 
-  
-}
 
 .form{
   display: flex;
@@ -640,10 +637,6 @@ textarea {
 @media only screen and (max-width: 768px) {
  
 
-  body{
-    background-image: url(../src/assets/bc1movil.png);
-  }
-
   .landing {
     height: auto; 
     padding: 2rem; 
@@ -651,11 +644,30 @@ textarea {
     display: flex;
     justify-items: center;
     padding-top: 15rem;
-    
+    background-image: url(../src/assets/bc-home.png);  
+  }
+
+  .filtros {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     
   }
 
+  .store_nav{
+    padding-top: 15%;
+    padding-bottom: 15%;
+    margin-bottom: 15%;
+    margin-top: 10%;
+  }
 
+  .btn-filter{
+    margin-top: 3%;
+  }
+
+ 
+}
   
   
   .title {
@@ -683,7 +695,7 @@ textarea {
     border-color: var(--color-white);
     color: var(--color-white);
   }
-  
+
   
   .cardbox,
   .articles {
@@ -704,7 +716,7 @@ textarea {
     margin: 20px 0 10px; 
     text-align: center; 
   }
-}
+
 
 /*  Responsive  Card*/
 

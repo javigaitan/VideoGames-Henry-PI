@@ -12,7 +12,6 @@ const {API_KEY} = process.env;
 const router = Router();
 
 // Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
 
 //creo una funcion async, todas las func async devuelven promesas
 //VIDEOGAMES
@@ -22,7 +21,7 @@ const getApiInfo = async () => {
   try {
     for (let i = 0; i < 5; i++) {
       const urlData = await axios.get(urlApi); //prometo darte los juegos, los juegos son muchos objetos
-      urlData.data.results //aca guardo la respuesta de results (results es un array con esos objetos)que son los objetos de videojuegos
+      urlData.data.results //aca guardo la respuesta de results 
         .map((e) => {
           //le paso un map para q me pase un nuevo array solo con esas propiedades
           videogamesArr.push({
@@ -64,7 +63,7 @@ const getDbInfo = async () => {
       released: e.released,
       rating: e.rating,
       platforms: e.platforms,
-      createdInDb: e.createdInDb,
+      createInDb: e.createInDb,
       genres: e.genres.map((el) => el.name),
     };
   });
@@ -77,6 +76,7 @@ const getAllVideogames = async () => {
   const infoTotal = apiInfo.concat(dbInfo);
   return infoTotal;
 };
+
 //VIDEOGAMES QUERY
 const apiName = async (name) => {
   try {
@@ -96,7 +96,6 @@ const apiName = async (name) => {
         genres: e.genres.map((e) => e.name),
       };
     });
-    //console.log(queryApiLimpia);
     return queryApiLimpia;
   } catch (error) {
     console.log(error);
@@ -279,7 +278,7 @@ router.post("/videogame", async (req, res) => {
     background_image,
     genres,
     platforms,
-    createdInDb,
+    createInDb,
   } = req.body;
   //console.log(req.body);
 
@@ -291,7 +290,7 @@ router.post("/videogame", async (req, res) => {
     rating,
     background_image,
     platforms, //hacer que entre en un array directo aunque sea 1 solo juego
-    createdInDb,
+    createInDb,
   });
 
   let genreDb = await Genres.findAll({

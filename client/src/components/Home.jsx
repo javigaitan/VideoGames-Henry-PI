@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGenres, getVideogames, filterCreated, orderByName , orderByRating, filterByGenres, getPlataforms } from "../actions";
+import { getGenres, getVideogames, createdFilter, orderByName , orderByRating, filterByGenres } from "../actions";
 import {Link} from "react-router-dom";
 import Card from "./Card";
 import Paginado from "./Paginado";
@@ -36,48 +36,37 @@ export default function Home(){
         setCurrentPage(pageNumber)
     }
 
-
-
-
-
-    useEffect (() =>{
+       useEffect (() =>{
         dispatch(getVideogames())
         dispatch(getGenres())
-    },[dispatch]);
+        },[dispatch]);
 
 
-    useEffect(() => {
+       useEffect(() => {
         dispatch(getVideogames())
           .then(() => setIsLoading(false));
         dispatch(getGenres())
 
-      }, [dispatch]);
+        }, [dispatch]);
       
 
 
 
 
-    function handleClick(e){
+       function handleClick(e){
         e.preventDefault();
         dispatch(getVideogames())
 
-    }
+       }
 
-
-    function handleClick(e){
-        e.preventDefault();
-        dispatch(getVideogames())
-        }
-
-       
-        
+      
         function handleFilterGenres(e){
             dispatch(filterByGenres(e.target.value))
             setCurrentPage(1)
         }
 
         function handleFilterCreation(e){
-            dispatch(filterCreated(e.target.value))
+            dispatch(createdFilter(e.target.value))
         }
         
         function handleSort(e){
@@ -111,10 +100,6 @@ export default function Home(){
             <Link  to= '/videogames'> <button className="install-button">Create Game</button></Link>
 
             </div>
-            
-           
-
-            
 
             <div >
 
@@ -162,16 +147,9 @@ export default function Home(){
                 </div >
                   </div >  
 
-                
-    
-           
 
-
-                <div className=" paginado">
-
-                
-
-                 </div> 
+                <div className=" paginado"> 
+                </div> 
 
             <div className="cardbox">
                     {currentGames.length > 0 ? (  currentGames.map((c) => (
@@ -182,6 +160,7 @@ export default function Home(){
                name={c.name}
                genres={c.genres}
                key={c.id}
+               
              />
              </div>
              ))
