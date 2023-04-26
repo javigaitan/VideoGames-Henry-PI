@@ -2,7 +2,7 @@
 require("dotenv").config();
 const { Router } = require('express');
 const axios = require ('axios');
-const {Videogame, Genres, Platforms} = require ('../db');
+const {Videogame, Genres} = require ('../db');
 const {API_KEY} = process.env;
 
 
@@ -12,6 +12,7 @@ const {API_KEY} = process.env;
 const router = Router();
 
 // Configurar los routers
+// Ejemplo: router.use('/auth', authRouter);
 
 //creo una funcion async, todas las func async devuelven promesas
 //VIDEOGAMES
@@ -21,7 +22,7 @@ const getApiInfo = async () => {
   try {
     for (let i = 0; i < 5; i++) {
       const urlData = await axios.get(urlApi); //prometo darte los juegos, los juegos son muchos objetos
-      urlData.data.results //aca guardo la respuesta de results 
+      urlData.data.results //aca guardo la respuesta de results (results es un array con esos objetos)que son los objetos de videojuegos
         .map((e) => {
           //le paso un map para q me pase un nuevo array solo con esas propiedades
           videogamesArr.push({
@@ -73,10 +74,18 @@ const getAllVideogames = async () => {
   //concateno las 2 la api y la de db en una sola funcion q voy a llamar cuando quiera todosm los juegos
   const apiInfo = await getApiInfo();
   const dbInfo = await getDbInfo();
+  if (!apiInfo) {
+  console.error('apiInfo no está definida');
+  // Manejar el error aquí
+}
+
+if (!dbInfo) {
+  console.error('dbInfo no está definida');
+  // Manejar el error aquí
+}
   const infoTotal = apiInfo.concat(dbInfo);
   return infoTotal;
 };
-
 //VIDEOGAMES QUERY
 const apiName = async (name) => {
   try {
@@ -96,6 +105,7 @@ const apiName = async (name) => {
         genres: e.genres.map((e) => e.name),
       };
     });
+    //console.log(queryApiLimpia);
     return queryApiLimpia;
   } catch (error) {
     console.log(error);
@@ -179,7 +189,7 @@ const apiId = async (id) => {
     //console.log(idDataLimpia);
     return idDataLimpia;
   } catch (error) {
-    console.log(error);
+    console.log('ALGO SALIO MAL IDDATALIMPIA' + error);
   }
 };
 
